@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/React-Tic-Tac-Toe-Game/static/css/main.52bc1042.css",
+    "main.js": "/React-Tic-Tac-Toe-Game/static/js/main.a5419ab2.js",
+    "static/media/success fanfare trumpets.mp3": "/React-Tic-Tac-Toe-Game/static/media/success fanfare trumpets.37b45d4b4b0828435ef4.mp3",
+    "static/media/endofgame.mp3": "/React-Tic-Tac-Toe-Game/static/media/endofgame.97f1c849d4b1410c3f26.mp3",
+    "static/media/click.mp3": "/React-Tic-Tac-Toe-Game/static/media/click.3a6330fad18bc789fcdb.mp3",
+    "static/media/negative beeps.mp3": "/React-Tic-Tac-Toe-Game/static/media/negative beeps.6b2eb1aa1ffcec110107.mp3",
+    "index.html": "/React-Tic-Tac-Toe-Game/index.html",
+    "main.52bc1042.css.map": "/React-Tic-Tac-Toe-Game/static/css/main.52bc1042.css.map",
+    "main.a5419ab2.js.map": "/React-Tic-Tac-Toe-Game/static/js/main.a5419ab2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52bc1042.css",
+    "static/js/main.a5419ab2.js"
+  ]
+}
