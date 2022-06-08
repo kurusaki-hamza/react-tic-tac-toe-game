@@ -428,7 +428,7 @@
 }
 
 /* Galaxy S5 */
-@media (min-width: 360px) and (min-height:640px) {
+@media  (min-height:540px) {
   .container {
     padding-inline: 10px;
     padding-top: 22%;
@@ -717,7 +717,7 @@
   }
 }
 /* My screen */
-@media (min-width:1024px) and (min-height:453px) {
+@media (min-width:924px)  {
   .container {
     padding-inline: 30%;
     padding-top: 2%;
