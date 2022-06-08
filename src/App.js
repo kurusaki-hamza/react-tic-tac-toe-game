@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Start from './components/start/Start';
+import Board from './components/board/Board';
+import PopUp from './components/popUp/PopUp';
+import { StartContext } from './context/startContext';
+import { BoardContext } from './context/boardContext';
 
 function App() {
+  const {screen} = React.useContext(StartContext);
+  const {popUp} = React.useContext(BoardContext);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        {screen === "startScreen" ? <Start /> : <Board />}
+        {popUp && <PopUp />}
+      </div>
     </div>
   );
 }

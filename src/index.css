@@ -1,13 +1,959 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  padding-inline: 30%;
+  padding-top: 1%;
+  background-color: #141348;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon-orange svg {
+  fill: orange;
+}
+
+.icon-lg svg {
+  width: 56px;
+}
+
+.icon-dark svg {
+  fill: #373754;
+}
+
+.icon-light svg {
+  fill: white;
+}
+
+.icon-blue svg {
+  fill: #00a5ff;
+}
+
+.icon-orange svg {
+  fill: orange;
+}
+
+.icon-lg svg {
+  width: 56px;
+}
+
+.icon-sm svg {
+  width: 30px;
+}
+
+.icon-light svg {
+  fill: white;
+}
+
+.bg-orange {
+  background-color: rgb(182, 139, 61);
+  box-shadow: rgb(126 90 24) 0px 6px 0px 0px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+.bg-dark {
+  background-color: #373754;
+  box-shadow: 0 6px 0 0 black;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+.bg-blue {
+  background-color: rgb(61, 139, 182);
+  box-shadow: rgb(36 89 119) 0px 6px 0px 0px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.bg-orange svg , .bg-blue svg {
+  fill: #373754
+}
+/* Start */
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.start_icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+}
+
+.start_card {
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #040005;
+  box-shadow: 0 6px 0 0 #555568;
+}
+
+.start_card h2 {
+  height: 47px;
+  padding: 10px;
+  color: lightblue;
+  margin-bottom: 0px;
+}
+
+.start_card_players {
+  width: 86%;
+  height: 94px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  background-color: #0c4f5a;
+  border-radius: 10px;
+}
+
+.start_card_players span {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.start_card_players span.active {
+  background-color: darkgray;
+  border-radius: 8px;
+}
+
+.start_setting {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0 15px;
+}
+
+.start_card h4 {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 9px;
+  color: red;
+}
+
+.start_setting_board {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #0c4f5a;
+  border-radius: 10px;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.start_setting_board span {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.start_setting_board span.active {
+  background-color: lightblue;
+  border-radius: 6px;
+  font-weight: bold;
+  color: black;
+}
+
+.start_btns {
+  margin-top: 10px;
+}
+
+.start_btns button {
+  background-color: orange;
+  width: 100%;
+  height: 44px;
+  font-size: 23px;
+  border-radius: 7px;
+  border: none;
+  color: black;
+  box-shadow: 0 6px 0 0 #864f07;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.start_btns button:active {
+  position: relative;
+  top: 2px;
+  box-shadow: 0 4px 0 0 #864f07;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+}
+
+.board_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 87px;
+  padding-right: 35px;
+}
+
+.board_header_icons {
+  display: flex;
+  height: 47%;
+}
+
+.board_header_turn {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  height: 35%;
+  margin-right: 17px;
+  box-shadow: 0 4px 0 0 black;
+  padding: 7px;
+  border-radius: 7px;
+  background-color: grey;
+}
+
+.board_header_restart {
+  display: flex;
+  height: 37%;
+  cursor: pointer;
+  box-shadow: 0 4px 0 0 #010101;
+  width: 14%;
+  border-radius: 6px;
+  padding: 6px;
+  background-color: grey;
+  justify-content: center;
+}
+
+.board_header_restart:active svg {
+  transform-origin: center;
+  transition: all 0.2s;
+  transform: rotate(104deg);
+}
+
+.board_cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  width: 66%;
+  margin: auto;
+}
+
+.board_card {
+  height: 84px;
+  cursor: pointer;
+}
+
+.board_footer {
+  display: flex;
+  justify-content: space-around;
+  padding-inline: 15px;
+  margin-top: 18px;
+}
+
+.board_footer_player {background-color: orange;height: 80px;border-radius: 4px;text-align: center;line-height: 37px;padding: 7px;font-size: 18px;box-shadow: 0 3px 0 0 black;}
+
+.board_footer_tries {
+  background-color: #29ff00;
+  height: 80px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 37px;
+  padding: 8px;
+  font-size: 18px;
+  width: 22%;
+  box-shadow: 0 3px 0 0 black;
+}
+
+.board_footer_cpu {
+  background-color: #06c9ea;
+  height: 80px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 37px;
+  padding-top: 7px;
+  padding-inline: 3px;
+  font-size: 18px;
+  width: 22%;
+  box-shadow: 0 3px 0 0 black;
+}
+
+.popUp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000cf;
+}
+
+.popUpWin {
+  position: absolute;
+  width: 100%;
+  height: 36%;
+  padding-top: 1%;
+  top: 31%;
+  background-color: #2f03ca;
+  color: white;
+  padding-inline: 35%;
+}
+
+.popUpWin > * {
+  font-weight: bold;
+  display: inline-block;
+  height: 20%;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.winner {
+  display: flex;
+  justify-content: center;
+}
+
+.winner svg {
+  height: 100%;
+  position: relative;
+  top: -3px;
+  margin-right: 6px;
+}
+
+.quit {
+  width: 24%;
+  background-color: #16204b;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 0 0 black;
+  margin-left: 16%;
+  cursor: pointer;
+  position:relative;
+}
+
+.next_round {
+  width: 39%;
+  margin-left: 7%;
+  background-color: #a97f08;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 0 0 black;
+  color: black;
+  cursor: pointer;
+  position:relative;
+}
+
+.quit:active {
+  box-shadow: 0 2px 0 0 black;
+  top: 2px;
+}
+
+.next_round:active {
+  box-shadow: 0 2px 0 0 black;
+  top: 2px;
+}
+
+.popUpRestart {
+  position: absolute;
+  width: 100%;
+  height: 36%;
+  padding-top: 4%;
+  top: 31%;
+  background-color: #2f03ca;
+  color: white;
+  padding-inline: 35%;
+}
+
+.popUpRestart p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.cancel {
+  width: 37%;
+  height: 26%;
+  background-color: #16204b;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 0 0 black;
+  margin-left: 8%;
+  cursor: pointer;
+  position: relative;
+  top: 11%;
+  font-weight: bold;
+}
+
+.restart {
+  top: 12%;
+  width: 40%;
+  margin-left: 7%;
+  background-color: #a97f08;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 0 0 black;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  height: 25%;
+  font-weight: bold;
+}
+
+.cancel:active {
+  box-shadow: 0 2px 0 0 black;
+  top: 12%;
+}
+
+.restart:active {
+  box-shadow: 0 2px 0 0 black;
+  top: 13%;
+}
+
+/* Galaxy S5 */
+@media (min-width: 360px) and (min-height:640px) {
+  .container {
+    padding-inline: 10px;
+    padding-top: 22%;
+  }
+  .start_setting h2 {
+    font-size: 25px;
+    padding: 7px;
+  }
+  .start_card h2 {
+    padding: 4px;
+  }
+  .board_cards {
+      width: 88%;
+  }
+  .board_footer div {
+    width: 28%;
+    padding: 3px;
+  }
+  .popUpWin {
+    height: 25%;
+    padding-top: 2%;
+    top: 41%;
+    padding-inline: 1%;
+  }
+  .popUpRestart {
+    height: 26%;
+    padding-top: 10%;
+    top: 37%;
+    padding-inline: 17px;
+  }
+  .cancel:active {
+    box-shadow: 0 2px 0 0 black;
+    top: 13%;
+  }
+}
+/* Samsung Galaxy S8+ */
+@media (min-width: 360px) and (min-height:740px) {
+  .container {
+    padding-inline: 10px;
+    padding-top: 33%;
+  }
+  .start_card h2 {
+    padding-top: 11px;
+  }
+  .start_setting_board {
+    margin-top: 6px;
+  }
+  .popUpRestart {
+    height: 21%;
+    padding-top: 10%;
+    top: 39%;
+    padding-inline: 17px;
+  }
+  .popUpWin {
+      height: 21%;
+      padding-top: 1%;
+      top: 41%;
+  }
+  .restart {
+    line-height: 9px;
+  }
+}
+/* iPhone SE */
+@media (min-width: 375px) {
+  .popUpWin {
+      height: 21%;
+      padding-top: 1%;
+      top: 38%;
+  }
+  .start_card h2 {
+    padding: 11px;
+  }
+}
+/* iPhone12Pro */
+@media (min-width: 390px) {
+  .container {
+    padding-top: 46%;
+  }
+  .popUpWin {
+    height: 22%;
+    padding-top: 4%;
+  }
+  .popUpRestart {
+    height: 19%;
+    padding-top: 10%;
+    top: 42%;
+  }
+}
+/* Samsung Galaxy S20 */
+@media (min-width: 412px) {
+  .cancel {
+    top: 12%;
+  }
+}
+/* iPad Mini */
+@media (min-width: 768px)  {
+  .container {
+    padding-inline: 2%;
+    padding-top: 14%;
+  }
+  .start {
+    gap: 21px;
+  }
+  .start_icons {
+    height: 106px;
+  }
+  .icon-lg svg {
+    width: 104px;
+  }
+  .start_card {
+    border-radius: 15px;
+    background-color: #040005;
+    box-shadow: 0 13px 0 0 #555568;
+  }
+  .start_card_players {
+    height: 151px;
+  }
+  .start_card h2 {
+    height: 64px;
+    padding: 10px 0 0 0;
+    font-size: 40px;
+  }
+  .start_card h4 {
+    height: 48px;
+    margin-bottom: 18px;
+    font-size: 31px;
+  }
+  .start_setting {
+    padding: 8px 0 21px;
+  }
+  .start_setting_board {
+    height: 98px;
+    padding: 14px;
+    border-radius: 12px;
+    margin-top: 21px;
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+  .start_btns button {
+    height: 70px;
+    font-size: 36px;
+    border-radius: 11px;
+    box-shadow: 0 14px 0 0 #864f07;
+  }
+  .start_btns button:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0 11px 0 0 #864f07;
+  }
+  .board {
+    margin-top: -8%;
+  }
+  .board_header {
+    height: 133px;
+    padding-inline: 49px;
+  }
+  .icon-sm svg {
+    width: 49px;
+  }
+  .board_header_turn {
+    height: 46%;
+    width: 20%;
+    font-size: 30px;
+    margin-right: 43px;
+    box-shadow: 0 8px 0 0 black;
+    padding: 6px;
+    border-radius: 10px;
+  }
+  .board_header_restart {
+    height: 45%;
+    box-shadow: 0 8px 0 0 #010101;
+    width: 16%;
+    border-radius: 7px;
+    padding: 11px;
+    top: 2%;
+    position: relative;
+    margin-right: 28px;
+  }
+  .board_cards {
+    gap: 36px;
+    width: 85%;
+  }
+  .board_card {
+    height: 169px;
+  }
+  .bg-orange {
+    box-shadow: rgb(126 90 24) 0px 13px 0px 0px;
+    border-radius: 13px;
+  }
+  .bg-dark {
+    box-shadow: black 0px 13px 0px 0px;
+    border-radius: 13px;
+  }
+  .bg-blue {
+    background-color: rgb(61, 139, 182);
+    box-shadow: rgb(36 89 119) 0px 13px 0px 0px;
+    border-radius: 13px;
+  }
+  .board_footer {
+    padding-inline: 15px;
+    margin-top: 39px;
+  }
+  .board_footer div {
+    box-shadow: 0 10px 0 0 black;
+    height: 140px;
+    width: 168px;
+    border-radius: 17px;
+    font-size: 36px;
+    line-height: 58px;
+    padding-top: 16px;
+  }
+  .popUpRestart {
+    height: 29%;
+    padding-top: 9%;
+    top: 34%;
+    padding-inline: 16%;
+  }
+  .cancel {
+    font-size: 26px;
+    top: 12%;
+    box-shadow: 0 7px 0 0 black;
+  }
+  .restart {
+    font-size: 26px;
+    height: 26%;
+    box-shadow: 0 7px 0 0 black;
+  }
+  .popUpRestart p {
+    font-size: 41px;
+  }
+  .popUpWin {
+    height: 28%;
+    padding-top: 4%;
+    top: 35%;
+    padding-inline: 21%;
+  }
+  .popUpWin p {
+    font-size: 35px;
+  }
+  .quit {
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 8px 0 0 black;
+    margin-left: 11%;
+    font-size: 29px;
+    top: 0.5%;
+  }
+  .next_round {
+    border-radius: 10px;
+    box-shadow: 0 8px 0 0 black;
+    font-size: 26px;
+  }
+  .quit:active {
+    box-shadow: 0 5px 0 0 black;
+    top: 3px;
+  }
+  .next_round:active {
+    box-shadow: 0 5px 0 0 black;
+    top: 3px;
+  }
+  .winner {
+    margin-bottom: 12px;
+    font-size: 33px;
+  }
+  .cancel:active {
+    box-shadow: 0 4px 0 0 black;
+    top: 14%;
+  }
+  .restart:active {
+    box-shadow: 0 4px 0 0 black;
+    top: 14%;
+  }
+}
+/* iPad Air */
+@media (min-width: 820px) {
+  .container {
+    padding-inline: 3%;
+    padding-top: 20%;
+  }
+  .popUpRestart {
+    height: 27%;
+    padding-top: 9%;
+  }
+  .board {
+      margin-top: 0px;
+  }
+}
+/* My screen */
+@media (min-width:1024px) and (min-height:453px) {
+  .container {
+    padding-inline: 30%;
+    padding-top: 2%;
+  }
+  .start_card h2 {
+    height: auto;
+    padding: 7px;
+    font-size: 28px;
+  }
+  .start {
+    gap: 13px;
+  }
+  .start_card {
+    border-radius: 15px;
+    background-color: #040005;
+    box-shadow: 0 5px 0 0 #555568;
+  }
+  .start_card h4 {
+    height: 16px;
+    margin-bottom: 11px;
+    font-size: 19px;
+  }
+  .start_card_players {
+    height: 83px;
+  }
+  .icon-lg svg {
+    width: 44px;
+  }
+  .start_icons {
+    height: 41px;
+  }
+  .start_setting {
+    padding: 0px 0 8px;
+  }
+  .start_setting_board {
+    height: 60px;
+    padding: 10px;
+    margin-top: 3px;
+    font-size: 22px;
+  }
+  .start_btns {
+    margin-top: 0px;
+  }
+  .start_btns button {
+    height: 42px;
+    font-size: 23px;
+    border-radius: 8px;
+    box-shadow: 0 6px 0 0 #864f07;
+  }
+  .start_btns button:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0 3px 0 0 #864f07;
+  }
+  .board {
+    margin-top: -8px;
+  }
+  .board_header {
+    height: 63px;
+    padding-right: 35px;
+  }
+  .board_cards {
+    gap: 15px;
+    width: 73%;
+  }
+  .board_card {
+    height: 80px;
+  }
+  .icon-sm svg {
+    width: 23px;
+  }
+  .board_header_turn div {
+    display: flex;
+    height: 100%;
+    top: 2px;
+    position: relative;
+  }
+  .board_header_restart {
+    height: 42%;
+    box-shadow: 0 4px 0 0 #010101;
+    width: 15%;
+    padding: 6px;
+    margin-right: 9%;
+  }
+  .board_header_turn {
+    height: 44%;
+    width: 21%;
+    margin-right: 12px;
+    box-shadow: 0 4px 0 0 black;
+    padding: 2px;
+    border-radius: 7px;
+    font-size: 19px;
+    padding-bottom: 6px;
+  }
+  .bg-orange {
+    box-shadow: rgb(126 90 24) 0px 6px 0px 0px;
+  }
+  .bg-dark {
+    box-shadow: black 0px 6px 0px 0px;
+  }
+  .bg-blue {
+    box-shadow: rgb(36 89 119) 0px 6px 0px 0px;
+  }
+  .board_footer {
+    padding-inline: 45px;
+    margin-top: 14px;
+  }
+  .board_footer div {
+    box-shadow: 0 5px 0 0 black;
+    height: 70px;
+    width: 70px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    padding-top: 14px;
+  }
+  .popUpWin {
+    height: 34%;
+    padding-top: 1%;
+    top: 33%;
+    padding-inline: 34%;
+  }
+  .popUpWin p {
+    font-size: 26px;
+  }
+  .winner {
+    font-size: 22px;
+    line-height: 19px;
+    margin: 8px 0 2px 0;
+  }
+  .quit {
+    width: 22%;
+    border-radius: 6px;
+    box-shadow: 0 4px 0 0 black;
+    margin-left: 20%;
+    font-size: 21px;
+    padding-bottom: 8px;
+    margin-top: 0;
+  }
+  .next_round {
+    width: 39%;
+    margin-left: 3%;
+    border-radius: 6px;
+    box-shadow: 0 4px 0 0 black;
+    font-size: 20px;
+    padding-bottom: 1px;
+    top: 0;
+    margin-top: 0;
+    height: 21%;
+  }
+  .popUpRestart {
+    height: 33%;
+    padding-top: 3%;
+    top: 33%;
+    padding-inline: 35%;
+  }
+  .popUpRestart p {
+    font-size: 27px;
+  }
+  .cancel {
+    box-shadow: 0 4px 0 0 black;
+    top: 9%;
+    font-size: 18px;
+  }
+  .cancel:active {
+    top: 11%;
+  }
+  .restart {
+    top: 10%;
+    box-shadow: 0 4px 0 0 black;
+    font-size: 18px;
+  }
+  .restart:active {
+    top: 12%;
+  }
+}
+/* Nest Hub */
+@media (min-width: 1024px) and (min-height:600px) {
+  .container {
+    padding-inline: 30%;
+    padding-top: 7%;
+  }
+  .popUpWin {
+    height: 31%;
+    padding-top: 2%;
+  }
+  .next_round {
+    top: 1%;
+  }
+  .next_round:active {
+    box-shadow: 0 2px 0 0 black;
+    top: 3px;
+  }
+  .quit:active {
+    box-shadow: 0 2px 0 0 black;
+    top: 2px;
+  }
+  .popUpRestart {
+    padding-top: 3%;
+    height: 28%;
+  }
+  .cancel:active {
+    box-shadow: 0 2px 0 0 black;
+    top: 11%;
+  }
+  .restart:active {
+    box-shadow: 0 2px 0 0 black;
+    top: 12%;
+  }
+}
+/* Nest Hub Max */
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: 33%;
+    padding-top: 13%;
+    box-shadow: inset 0px 0 0 120px black;
+  }
+  .board {
+    margin-top: 12px;
+  }
+  .popUpRestart {
+    padding-top: 4%;
+    height: 26%;
+  }
+  .popUpWin {
+    height: 26%;
+    padding-top: 2%;
+  }
+  .next_round {
+    top: 2%;
+    margin-left: 2%;
+  }
+  .next_round:active {
+      top: 3px;
+  }
+  .quit {
+    height: 23%;
+  }
 }
