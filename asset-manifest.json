@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/React-Tic-Tac-Toe-Game/static/css/main.dbb82877.css",
-    "main.js": "/React-Tic-Tac-Toe-Game/static/js/main.a5419ab2.js",
-    "static/media/success fanfare trumpets.mp3": "/React-Tic-Tac-Toe-Game/static/media/success fanfare trumpets.37b45d4b4b0828435ef4.mp3",
-    "static/media/endofgame.mp3": "/React-Tic-Tac-Toe-Game/static/media/endofgame.97f1c849d4b1410c3f26.mp3",
-    "static/media/click.mp3": "/React-Tic-Tac-Toe-Game/static/media/click.3a6330fad18bc789fcdb.mp3",
-    "static/media/negative beeps.mp3": "/React-Tic-Tac-Toe-Game/static/media/negative beeps.6b2eb1aa1ffcec110107.mp3",
-    "index.html": "/React-Tic-Tac-Toe-Game/index.html",
-    "main.dbb82877.css.map": "/React-Tic-Tac-Toe-Game/static/css/main.dbb82877.css.map",
-    "main.a5419ab2.js.map": "/React-Tic-Tac-Toe-Game/static/js/main.a5419ab2.js.map"
+    "main.css": "/react-tic-tac-toe-game/static/css/main.dbb82877.css",
+    "main.js": "/react-tic-tac-toe-game/static/js/main.de152f98.js",
+    "static/media/success fanfare trumpets.mp3": "/react-tic-tac-toe-game/static/media/success fanfare trumpets.37b45d4b4b0828435ef4.mp3",
+    "static/media/endofgame.mp3": "/react-tic-tac-toe-game/static/media/endofgame.97f1c849d4b1410c3f26.mp3",
+    "static/media/click.mp3": "/react-tic-tac-toe-game/static/media/click.3a6330fad18bc789fcdb.mp3",
+    "static/media/negative beeps.mp3": "/react-tic-tac-toe-game/static/media/negative beeps.6b2eb1aa1ffcec110107.mp3",
+    "index.html": "/react-tic-tac-toe-game/index.html",
+    "main.dbb82877.css.map": "/react-tic-tac-toe-game/static/css/main.dbb82877.css.map",
+    "main.de152f98.js.map": "/react-tic-tac-toe-game/static/js/main.de152f98.js.map"
   },
   "entrypoints": [
     "static/css/main.dbb82877.css",
-    "static/js/main.a5419ab2.js"
+    "static/js/main.de152f98.js"
   ]
 }
