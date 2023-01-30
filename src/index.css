@@ -957,3 +957,20 @@
     height: 23%;
   }
 }
+
+@media (min-width: 1600px) {
+    .board {
+       width: 60%;
+       left: 28%;
+       position: relative;
+    }
+    .winner {
+       align-items: self-start;
+    }
+}
+
+@media (min-width: 1921px) {
+     .board {
+       width: 52%;
+    }
+}
